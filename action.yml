@@ -9,8 +9,8 @@ inputs:
 
   user:
     description: The user to change the owner to
-    required: true
-    default: ${{ github.env.USER }}
+    required: false
+    default: ""
 
 runs:
   using: docker
