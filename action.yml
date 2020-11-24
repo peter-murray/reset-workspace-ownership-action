@@ -5,12 +5,12 @@ inputs:
   workspace_path:
     description: The path to the workspace to process
     required: true
-    default: github.workspace
+    default: ${{ github.workspace }}
 
   user:
     description: The user to change the owner to
     required: true
-    default: github.env.USER
+    default: ${{ github.env.USER }}
 
 runs:
   using: docker
