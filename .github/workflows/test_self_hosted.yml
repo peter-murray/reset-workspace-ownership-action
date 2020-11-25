@@ -13,6 +13,13 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v2
 
+      - name: Get Actions user id
+        id: get_uid
+        run: |
+          echo ::set-output name=uid::`id -u $USER`
+
       - name: Invoke Action
         uses: peter-murray/reset-permissions-action@main
+        with:
+          user_id: ${{ steps.get_uid.outputs.uid }}
         

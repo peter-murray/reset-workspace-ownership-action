@@ -7,10 +7,9 @@ inputs:
     required: true
     default: ${{ github.workspace }}
 
-  user:
-    description: The user to change the owner to
-    required: false
-    default: ""
+  user_id:
+    description: The user id to change the owner to when not matched
+    required: true
 
 runs:
   using: docker
