@@ -1,0 +1,32 @@
+
+name: Test self-hosted with directory
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test
+
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Create directory owned by root
+        run: |
+          docker run -v${GITHUB_WORKSPACE}:/data -w /data busybox mkdir -p src/main/resources && touch src/main/data.txt
+
+      - name: Get Actions user id
+        id: get_uid
+        run: |
+          actions_user_id=`id -u $USER`
+          echo $actions_user_id
+          echo ::set-output name=uid::$actions_user_id
+
+      - name: Invoke Action
+        uses: peter-murray/reset-permissions-action@main
+        with:
+          user_id: ${{ steps.get_uid.outputs.uid }}
+        
