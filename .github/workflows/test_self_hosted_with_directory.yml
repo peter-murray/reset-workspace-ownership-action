@@ -16,7 +16,7 @@ jobs:
 
       - name: Create directory owned by root
         run: |
-          docker run -v${GITHUB_WORKSPACE}:/data -w /data busybox mkdir -p src/main/resources && touch src/main/data.txt
+          docker run -v${GITHUB_WORKSPACE}:/data -w /data busybox mkdir -p src/main/resources
 
       - name: Get Actions user id
         id: get_uid
