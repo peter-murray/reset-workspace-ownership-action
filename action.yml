@@ -16,4 +16,4 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.workspace_path }}
-    - ${{ inputs.user }}
+    - ${{ inputs.user_id }}
