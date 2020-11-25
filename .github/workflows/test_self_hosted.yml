@@ -16,7 +16,9 @@ jobs:
       - name: Get Actions user id
         id: get_uid
         run: |
-          echo ::set-output name=uid::`id -u $USER`
+          UID=`id -u $USER`
+          echo $UID
+          echo ::set-output name=uid::$UID
 
       - name: Invoke Action
         uses: peter-murray/reset-permissions-action@main
