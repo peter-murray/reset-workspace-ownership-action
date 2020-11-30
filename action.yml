@@ -1,12 +1,7 @@
-name: Reset Permissions Action
-description: A GitHub Action to reset ownership of the files not owned byt the Actions runner in the workspace
+name: Reset Workspace Ownership Action
+description: A GitHub Action to reset ownership of the files not owned by the Actions runner in the workspace directory
 
 inputs:
-  workspace_path:
-    description: The path to the workspace to process
-    required: true
-    default: ${{ github.workspace }}
-
   user_id:
     description: The user id to change the owner to when not matched
     required: true
@@ -15,5 +10,9 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.workspace_path }}
-    - ${{ inputs.user_id }}
+    - ${{ inputs.user }}
+    - ${{ github.workspace }}
+
+branding:
+  icon: user-check
+  color: yellow
