@@ -15,7 +15,7 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.user }}
+    - ${{ inputs.user_id }}
     - ${{ inputs.workspace_path }}
 
 branding:
