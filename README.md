@@ -1,7 +1,7 @@
 # reset-workspace-ownership-action
 
 A GitHub Action that can be utilized to reset ownership on directories and files in the `GITHUB_WORKSPACE` that can result from 
-using Containers in GitHub Actions Workflows on self-hsoted runners.
+using Containers in GitHub Actions Workflows on self-hosted runners.
 
 
 ## Problem
