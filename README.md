@@ -77,5 +77,38 @@ When the action is run it will log the files adn directories it detects as not b
 after listing of the file:
 
 ```
+Updating ownership permissions on workspace directory /home/devops/actions-runner-personal/_work/reset-workspace-ownership-action/reset-workspace-ownership-action
+  user: 1000
+total 44
+drwxrwxr-x    5 1000     1000          4096 Nov 30 18:46 .
+drwxr-xr-x    6 root     root          4096 Nov 30 18:46 ..
+drwxrwxr-x    8 1000     1000          4096 Nov 30 18:46 .git
+drwxrwxr-x    3 1000     1000          4096 Nov 30 18:46 .github
+-rw-rw-r--    1 1000     1000           102 Nov 30 18:46 Dockerfile
+-rw-rw-r--    1 1000     1000          1057 Nov 30 18:46 LICENSE.md
+-rw-rw-r--    1 1000     1000          3678 Nov 30 18:46 README.md
+-rw-rw-r--    1 1000     1000           555 Nov 30 18:46 action.yml
+-rwxrwxr-x    1 1000     1000           479 Nov 30 18:46 entrypoint.sh
+drwxr-xr-x    3 root     root          4096 Nov 30 18:46 src
+-rwxrwxr-x    1 1000     1000           317 Nov 30 18:46 update_file_object.sh
 
+Looking for files/directories in current working directory not owned by "1000"
+
+Updating ownership: ./src
+  drwxr-xr-x    3 root     root          4096 Nov 30 18:46 ./src
+changed ownership of './src' to 1000:0
+Modified ownership: ./src
+  drwxr-xr-x    3 1000     root          4096 Nov 30 18:46 ./src
+
+Updating ownership: ./src/main
+  drwxr-xr-x    3 root     root          4096 Nov 30 18:46 ./src/main
+changed ownership of './src/main' to 1000:0
+Modified ownership: ./src/main
+  drwxr-xr-x    3 1000     root          4096 Nov 30 18:46 ./src/main
+
+Updating ownership: ./src/main/resources
+  drwxr-xr-x    2 root     root          4096 Nov 30 18:46 ./src/main/resources
+changed ownership of './src/main/resources' to 1000:0
+Modified ownership: ./src/main/resources
+  drwxr-xr-x    2 1000     root          4096 Nov 30 18:46 ./src/main/resources
 ```
