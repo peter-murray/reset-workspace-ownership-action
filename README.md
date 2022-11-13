@@ -49,7 +49,7 @@ You can utilize an action step like the following to expose the UID of the GitHu
   run: |
     actions_user_id=`id -u $USER`
     echo $actions_user_id
-    echo ::set-output name=uid::$actions_user_id
+    echo "uid=$actions_user_id" >> $GITHUB_OUTPUT
 ```
 
 
@@ -63,7 +63,7 @@ Obtain the UID of the GitHub Actions runner and then correct any directories and
   run: |
     actions_user_id=`id -u $USER`
     echo $actions_user_id
-    echo ::set-output name=uid::$actions_user_id
+    echo "uid=$actions_user_id" >> $GITHUB_OUTPUT
 
 - name: Correct Ownership in GITHUB_WORKSPACE directory
   uses: peter-murray/reset-workspace-ownership-action@v1
