@@ -23,7 +23,7 @@ jobs:
         run: |
           actions_user_id=`id -u $USER`
           echo $actions_user_id
-          echo ::set-output name=uid::$actions_user_id
+          echo "uid=$actions_user_id" >> $GITHUB_OUTPUT
 
       - name: Invoke Action
         uses: peter-murray/reset-permissions-action@main
